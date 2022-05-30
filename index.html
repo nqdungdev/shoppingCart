@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Shop</title>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body class="bg-dark">
+    <h1 class="text-center text-light py-4 bg-black bg-opacity-50">Phone Shop</h1>
+    <section class="container">
+        <select id="js-selectFilter" class="form-select w-auto mt-5">
+            <option value="0">--Filter--</option>
+            <option value="1">Iphone</option>
+            <option value="2">Samsung</option>
+        </select>
+
+        <div class="row mb-5" id="js-productList"></div>
+
+        <h1 id="cart-title" class="text-center text-light py-4">Giỏ hàng</h1>
+        <p id="js-alert" class="alert alert-danger" style="display:none"></p>
+
+        <div id="cart">
+            <table class="table table-dark table-striped table-hover table-bordered table-sm align-middle text-center">
+                <thead>
+                    <tr>
+                        <th>Hình Ảnh</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Giá</th>
+                        <th>Số Lượng</th>
+                        <th>Tổng Cộng</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody id="js-cartList"></tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Tổng tiền</td>
+                        <td>
+                            <span id="js-textTotal"></sp>
+                        </td>
+                        <td><button class="btn btn-success btn-purchase" onclick="handlePurchase()">Payment</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="modal fade" id="detailModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Thông số kỹ thuật</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="js-detailModal">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+        integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/models/product.js"></script>
+    <script src="./js/models/cart.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
